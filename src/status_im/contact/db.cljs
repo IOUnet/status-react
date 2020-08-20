@@ -3,7 +3,8 @@
             [clojure.string :as clojure.string]
             [status-im.ethereum.core :as ethereum]
             [status-im.utils.gfycat.core :as gfycat]
-            [status-im.utils.identicon :as identicon]))
+            [status-im.utils.identicon :as identicon]
+            [status-im.multiaccounts.core :as multiaccounts]))
 
 (defn public-key->new-contact [public-key]
   (let [alias (gfycat/generate-gfy public-key)]
@@ -55,7 +56,8 @@
                          current-account
                          (select-keys [:name :preferred-name :public-key :photo-path])
                          (clojure.set/rename-keys {:name           :alias
-                                                   :preferred-name :name}))
+                                                   :preferred-name :name})
+                         (multiaccounts/contact-with-names))
         all-contacts    (cond-> contacts
                           current-contact
                           (assoc public-key current-contact))]
@@ -135,7 +137,8 @@
       (assoc :pending? (pending? contact)
              :blocked? (blocked? contact)
              :active? (active? contact)
-             :added? (contains? system-tags :contact/added))))
+             :added? (contains? system-tags :contact/added))
+      (multiaccounts/contact-with-names)))
 
 (defn enrich-contacts
   [contacts]
