@@ -22,6 +22,7 @@
    :phone-nfc-on        "images/ui/phone-nfc-on.png"
    :phone-nfc-off       "images/ui/phone-nfc-off.png"
    :dapp-store          "images/ui/dapp-store.png"
+   :iou_butt            "images/ui/iou_butt.jpg"
    :ens-header          "images/ui/ens-header.png"})
 
 (def loaded-images (atom {}))

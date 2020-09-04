@@ -32,6 +32,7 @@
    :phone-nfc-on       (js/require "../resources/images/ui/phone-nfc-on.png")
    :phone-nfc-off      (js/require "../resources/images/ui/phone-nfc-off.png")
    :dapp-store         (js/require "../resources/images/ui/dapp-store.png")
+   :iou_butt           (js/require "../resources/images/ui/iou_butt.jpg")
    :ens-header         (js/require "../resources/images/ui/ens-header.png")
    :ens-header-dark    (js/require "../resources/images/ui/ens-header-dark.png")
    :new-chat-header    (js/require "../resources/images/ui/new-chat-header.png")

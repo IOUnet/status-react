@@ -54,7 +54,7 @@
    [react/touchable-highlight {:on-press #(re-frame/dispatch [:browser.ui/open-url "https://iou.bz"])}
     [react/view (styles/iou-store-container)
      [iou-image nil iou-image-data]
-     [react/text {:style styles/open-iou-store} (i18n/label :t/open-iou-store)]
+     [react/text {:style styles/open-iou-store} "IOUs"]
      [react/text {:style {:color colors/blue :font-size 13 :line-height 22}} "https://iou.bz ->"]]]
    [react/touchable-highlight {:on-press #(re-frame/dispatch [:browser.ui/open-url "https://dap.ps"])}
     [react/view (styles/dapp-store-container)
