@@ -31,6 +31,17 @@
    :padding-horizontal 44
    :align-items        :center})
 
+(defn iou-store-container []
+  {:margin             16
+   :border-color       colors/gray-lighter
+   :margin-top         8
+   :border-width       1
+   :border-radius      12
+   :padding-vertical   16
+   :padding-horizontal 44
+   :align-items        :center})
+
+
 (def open-dapp-store
   {:margin-top  12
    :font-size   15

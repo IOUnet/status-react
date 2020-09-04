@@ -46,8 +46,16 @@
 (def dapp-image-data {:image (resources/get-image :dapp-store) :width 768 :height 333})
 (defn dapp-image [] [components.common/image-contain nil dapp-image-data])
 
+(def iou-image-data {:image (resources/get-image :iou_butt) :width 768 :height 565})
+(defn iou-image [] [components.common/image-contain nil iou-image-data])
+
 (defn list-header [empty?]
   [react/view (when empty? {:flex 1})
+   [react/touchable-highlight {:on-press #(re-frame/dispatch [:browser.ui/open-url "https://iou.bz"])}
+    [react/view (styles/iou-store-container)
+     [iou-image nil iou-image-data]
+     [react/text {:style styles/open-iou-store} (i18n/label :t/open-iou-store)]
+     [react/text {:style {:color colors/blue :font-size 13 :line-height 22}} "https://iou.bz ->"]]]
    [react/touchable-highlight {:on-press #(re-frame/dispatch [:browser.ui/open-url "https://dap.ps"])}
     [react/view (styles/dapp-store-container)
      [dapp-image nil dapp-image-data]
